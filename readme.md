@@ -10,13 +10,13 @@
 cd frontend/guiTune/
 ```
 
-### open a terminal an run server script
+### open a terminal window an run server script
 
 ```sh
 npm start
 ```
 
-### open a terminal and run client script
+### open a separate terminal window and run client script
 
 ```sh
 npm run ios
