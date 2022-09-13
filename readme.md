@@ -7,7 +7,7 @@
 ### navigate to the app's repo
 
 ```sh
-cd frontend/Guitune
+cd frontend/guiTune/
 ```
 
 ### open a terminal an run server script
