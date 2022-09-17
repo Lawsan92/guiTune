@@ -1,6 +1,7 @@
 import React, {useState} from 'react';
 import { StyleSheet, Text, View, Webview, TouchableHighlight, ImageBackground} from 'react-native';
 import Guitar from './Guitar.js'
+import Record from './Record';
 
 const Select = ({homePage}) => {
 
@@ -12,6 +13,12 @@ const Select = ({homePage}) => {
     PressGuitar(false);
   }
 
+  const [record, Start] = useState(false);
+
+  const beginRecording = () => {
+    Start(true);
+  }
+
   const guitarImage = {uri: 'https://cdn.mos.cms.futurecdn.net/CvG2khErqT4uRwueoJRtqN.jpg'};
   const ukeleleImage = {uri: 'https://guitar.com/wp-content/uploads/2021/01/Martin-Concert-Uke@1400x520.jpg'};
   const bassImage = {uri: 'https://m.media-amazon.com/images/I/71yjvqZDTuL._AC_SL1500_.jpg'};
@@ -20,6 +27,8 @@ const Select = ({homePage}) => {
     return (
       <Guitar backBtn={backBtn}/>
     )
+  } else if (record) {
+    return <Record/>;
   } else {
     return (
       <View style={styles.container}>
@@ -43,6 +52,12 @@ const Select = ({homePage}) => {
         onPress={() => {homePage()}} style={styles.homeBtn}
         underlayColor='white'>
           <Text style={styles.btnText}>Home</Text>
+        </TouchableHighlight>
+        <TouchableHighlight
+        title='homeBtn'
+        onPress={() => {beginRecording()}} style={styles.homeBtn}
+        underlayColor='white'>
+          <Text style={styles.btnText}>Record</Text>
         </TouchableHighlight>
       </View>
     )
